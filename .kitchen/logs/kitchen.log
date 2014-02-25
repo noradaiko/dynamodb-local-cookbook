@@ -1,0 +1,3 @@
+I, [2014-02-25T16:49:03.610047 #62608]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-02-25T16:49:03.849839 #62608]  INFO -- Kitchen: -----> Creating <default-ubuntu-1204>...
+I, [2014-02-25T16:49:37.242738 #62608]  INFO -- Kitchen: -----> Kitchen is finished. (0m33.63s)
