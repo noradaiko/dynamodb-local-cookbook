@@ -1,3 +1,14 @@
 I, [2014-02-25T16:49:03.610047 #62608]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
 I, [2014-02-25T16:49:03.849839 #62608]  INFO -- Kitchen: -----> Creating <default-ubuntu-1204>...
 I, [2014-02-25T16:49:37.242738 #62608]  INFO -- Kitchen: -----> Kitchen is finished. (0m33.63s)
+I, [2014-02-25T16:50:45.758242 #62806]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-02-25T16:50:46.003070 #62806]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-02-25T16:51:14.804721 #62806]  INFO -- Kitchen: -----> Kitchen is finished. (0m29.05s)
+W, [2014-02-25T16:51:29.604930 #62822]  WARN -- Kitchen: Make sure you have the pry gem installed. You can install it with:
+W, [2014-02-25T16:51:29.605018 #62822]  WARN -- Kitchen: `gem install pry` or including 'gem "pry"' in your Gemfile.
+I, [2014-02-25T16:52:24.281933 #62863]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-02-25T16:52:24.516203 #62863]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-02-25T16:52:25.764785 #62863]  INFO -- Kitchen: -----> Kitchen is finished. (0m1.48s)
+I, [2014-02-25T17:00:48.633969 #63000]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-02-25T17:00:48.878073 #63000]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-02-25T17:00:49.894811 #63000]  INFO -- Kitchen: -----> Kitchen is finished. (0m1.26s)
