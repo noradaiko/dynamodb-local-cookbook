@@ -10,29 +10,44 @@ RSpec.configure do |c|
 end
 
 describe "DynamoDB Local Daemon" do
-  describe 'group' do
+  describe "group 'dynamodb-local'" do
     it "exists" do
       expect(group('dynamodb-local')).to exist
     end
   end
 
-  describe "user" do
+  describe "user 'dynamodb-local'" do
+    before :each do
+      @user = user('dynamodb-local')
+    end
     it "exists" do
-      expect(user('dynamodb-local')).to exist
+      expect(@user).to exist
     end
 
     it "belongs to group 'dynamodb-local'" do
-      expect(user('dynamodb-local')).to belong_to_group 'dynamodb-local'
+      expect(@user).to belong_to_group 'dynamodb-local'
     end
 
     it "has a home directory '/home/dynamodb-local'" do
-      expect(user('dynamodb-local')).to have_home_directory '/home/dynamodb-local'
+      expect(@user).to have_home_directory '/home/dynamodb-local'
     end
   end
 
-  describe "dynamodb local jar" do
+  describe "dynamodb archive" do
+    before :each do
+      @file = file('/tmp/dynamodb_local_2013-12-12.tar.gz')
+    end
+
     it "should be downloaded to tmp" do
-      expect(file('/tmp/dynamodb_local_2013-12-12.tar.gz')).to be_file
+      expect(@file).to be_file
+    end
+
+    it "should be owned by 'dynamodb-local'" do
+      expect(@file).to be_owned_by 'dynamodb-local'
+    end
+
+    it "should be grouped into 'dynamodb-local'" do
+      expect(@file).to be_grouped_into 'dynamodb-local'
     end
   end
 end
