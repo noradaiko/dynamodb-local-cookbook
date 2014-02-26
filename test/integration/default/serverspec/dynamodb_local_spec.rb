@@ -20,34 +20,23 @@ describe "DynamoDB Local Daemon" do
     before :each do
       @user = user('dynamodb-local')
     end
+
     it "exists" do
       expect(@user).to exist
-    end
-
-    it "belongs to group 'dynamodb-local'" do
-      expect(@user).to belong_to_group 'dynamodb-local'
-    end
-
-    it "has a home directory '/home/dynamodb-local'" do
-      expect(@user).to have_home_directory '/home/dynamodb-local'
     end
   end
 
   describe "dynamodb archive" do
     before :each do
-      @file = file('/tmp/dynamodb_local_2013-12-12.tar.gz')
+      @file = file('/tmp/dynamodb-local.tar.gz')
     end
 
-    it "should be downloaded to tmp" do
+    it "downloads to tmp" do
       expect(@file).to be_file
     end
 
-    it "should be owned by 'dynamodb-local'" do
-      expect(@file).to be_owned_by 'dynamodb-local'
-    end
-
-    it "should be grouped into 'dynamodb-local'" do
-      expect(@file).to be_grouped_into 'dynamodb-local'
+    it "extracts into '/home/dynamodb-local'" do
+      expect(file('/home/dynamodb-local/DynamoDBLocal.jar')).to be_file
     end
   end
 end
