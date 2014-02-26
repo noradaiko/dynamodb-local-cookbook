@@ -17,4 +17,8 @@ describe "DynamoDB Local Daemon" do
   describe command('which java') do
     it { should return_exit_status 0 }
   end
+
+  describe file('/usr/local/dynamodb') do
+    it { should be_directory }
+  end
 end
