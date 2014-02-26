@@ -1,0 +1,5 @@
+#!/bin/sh
+cd /usr/local/dynamodb
+exec 2>&1
+# TODO: Refactor run command out into attributes
+exec java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar
