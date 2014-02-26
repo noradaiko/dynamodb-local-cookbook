@@ -40,4 +40,8 @@ describe "DynamoDB Local Daemon" do
       expect(file('/home/dynamodb-local/DynamoDBLocal_lib')).to be_directory
     end
   end
+
+  describe process("java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar") do
+    it { should be_running }
+  end
 end

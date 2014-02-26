@@ -1,3 +1,6 @@
+include_recipe 'apt'
+include_recipe 'java'
+
 group "dynamodb-local" do
 end
 
