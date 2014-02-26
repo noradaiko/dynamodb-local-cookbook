@@ -10,38 +10,11 @@ RSpec.configure do |c|
 end
 
 describe "DynamoDB Local Daemon" do
-  describe "group 'dynamodb-local'" do
-    it "exists" do
-      expect(group('dynamodb-local')).to exist
-    end
+  describe package('apt') do
+    it { should be_installed }
   end
 
-  describe "user 'dynamodb-local'" do
-    before :each do
-      @user = user('dynamodb-local')
-    end
-
-    it "exists" do
-      expect(@user).to exist
-    end
-  end
-
-  describe "dynamodb archive" do
-    before :each do
-      @file = file('/tmp/dynamodb-local.tar.gz')
-    end
-
-    it "downloads to tmp" do
-      expect(@file).to be_file
-    end
-
-    it "extracts into '/home/dynamodb-local'" do
-      expect(file('/home/dynamodb-local/DynamoDBLocal.jar')).to be_file
-      expect(file('/home/dynamodb-local/DynamoDBLocal_lib')).to be_directory
-    end
-  end
-
-  describe process("java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar") do
-    it { should be_running }
+  describe command('which java') do
+    it { should return_exit_status 0 }
   end
 end
