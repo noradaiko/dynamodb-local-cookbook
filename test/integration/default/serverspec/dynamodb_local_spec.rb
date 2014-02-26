@@ -37,6 +37,7 @@ describe "DynamoDB Local Daemon" do
 
     it "extracts into '/home/dynamodb-local'" do
       expect(file('/home/dynamodb-local/DynamoDBLocal.jar')).to be_file
+      expect(file('/home/dynamodb-local/DynamoDBLocal_lib')).to be_directory
     end
   end
 end
