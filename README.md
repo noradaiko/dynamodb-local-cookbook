@@ -1,10 +1,10 @@
 DynamoDB Local Chef Cookbook
-=======================
+============================
 
-Instructions
------------------------
+# Instructions
 
-# Tests
+Tests
+-----
 1. Make sure rvm is installed with ruby 2.1.1
 2. Clone repository
 3. Run bundle install
