@@ -8,7 +8,8 @@ ark 'dynamodb' do
   extension 'tar.gz'
 end
 
-runit_service 'dynamodb-local-cookbook' do
+runit_service 'dynamodb-local' do
+  service_name 'dynamodb-local'
   options({
     :dynamodb_local_port => node[:dynamodb_local][:port]
   })

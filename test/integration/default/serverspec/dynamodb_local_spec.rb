@@ -22,7 +22,7 @@ describe "DynamoDB Local Daemon" do
     it { should be_directory }
   end
 
-  describe process('java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar') do
+  describe service('dynamodb-local') do
     it { should be_running }
   end
 
