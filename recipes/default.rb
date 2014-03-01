@@ -11,6 +11,7 @@ end
 runit_service 'dynamodb-local' do
   service_name 'dynamodb-local'
   options({
-    :dynamodb_local_port => node[:dynamodb_local][:port]
+    :dynamodb_local_port => node[:dynamodb_local][:port],
+    :dynamodb_local_log_dir => node[:dynamodb_local][:log_dir]
   })
 end
