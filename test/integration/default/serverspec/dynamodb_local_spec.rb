@@ -22,7 +22,6 @@ describe "DynamoDB Local Daemon" do
     it { should be_directory }
   end
 
-  # TODO: refactor run command into attributes
   describe process('java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar') do
     it { should be_running }
   end

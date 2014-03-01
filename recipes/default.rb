@@ -3,10 +3,13 @@ include_recipe 'java'
 include_recipe 'ark'
 include_recipe 'runit'
 
-# TODO: Refactor site location into attributes
 ark 'dynamodb' do
-  url 'http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest'
+  url node[:dynamodb_local][:source]
   extension 'tar.gz'
 end
 
-runit_service 'dynamodb-local-cookbook'
+runit_service 'dynamodb-local-cookbook' do
+  options({
+    :dynamodb_local_port => node[:dynamodb_local][:port]
+  })
+end
