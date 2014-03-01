@@ -6,3 +6,8 @@ cookbook.
 v0.1.0
 ------
 - Initial release
+
+v0.2.0
+------
+- Added custom log directories
+- Added dynamodb local port customization
