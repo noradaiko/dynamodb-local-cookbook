@@ -1,8 +1,8 @@
 #!/bin/sh
 cd /usr/local/dynamodb
 exec 2>&1
-# TODO: Refactor run command out into attributes
 exec java \
-  -Djava.library.path=./DynamoDBLocal_lib \
-  -jar DynamoDBLocal.jar \
-  -port <%= @options[:dynamodb_local_port] %>
+  -Djava.library.path=<%= @options[:dynamodb_local_java_library_path] %>\
+  -jar <%= @options[:dynamodb_local_jar] %> \
+  -port <%= @options[:dynamodb_local_port] %> \
+  -dbPath <%= @options[:dynamodb_local_db_path] %>
