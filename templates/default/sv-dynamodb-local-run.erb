@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo mkdir <%= @options[:dynamodb_local_db_path] %>
+sudo mkdir -p <%= @options[:dynamodb_local_db_path] %>
 exec 2>&1
 exec java \
   -Djava.library.path=<%= @options[:dynamodb_local_java_library_path] %> \
