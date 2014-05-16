@@ -6,7 +6,7 @@ include_recipe 'ark'
 #
 ark 'dynamodb' do
   url node[:dynamodb_local][:source]
-  path "#{node[:dynamodb_local][:dir]}/dynamodb-local"
+  path node[:dynamodb_local][:dir]
   action :install
   strip_components 0
 end
