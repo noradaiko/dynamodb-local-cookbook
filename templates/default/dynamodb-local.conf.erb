@@ -1,0 +1,5 @@
+port <%= node[:dynamodb_local][:port] %>
+datadir <%= node[:dynamodb_local][:path][:data] %>
+
+daemonize no
+logfile <%= node[:dynamodb_local][:path][:logs] %>

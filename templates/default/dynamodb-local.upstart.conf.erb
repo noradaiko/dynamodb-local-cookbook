@@ -1,0 +1,13 @@
+#!upstart
+description "DynamoDB Local"
+
+env USER=root
+
+start on startup
+stop on shutdown
+
+exec java \
+  -Djava.library.path=<%= node[:dynamodb_local][:dir] %>/dynamodb-local/<%= node[:dynamodb_local][:java][:lib] %> \
+  -jar <%= node[:dynamodb_local][:dir] %>/dynamodb-local/<%= node[:dynamodb_local][:java][:jar] %> \
+  -port <%= node[:dynamodb_local][:port] %> \
+  -dbPath <%= node[:dynamodb_local][:path][:data] %>
