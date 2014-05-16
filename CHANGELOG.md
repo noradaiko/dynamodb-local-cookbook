@@ -11,3 +11,11 @@ v0.2.0
 ------
 - Added custom log directories
 - Added dynamodb local port customization
+
+v0.2.3
+------
+- More detailed run customization
+
+v0.2.4
+------
+- Removed runit dependency, service now runs thru Upstart
