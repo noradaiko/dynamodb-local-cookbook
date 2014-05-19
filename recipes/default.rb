@@ -36,7 +36,7 @@ service "dynamodb-local" do
 end
 
 template "dynamodb-local.conf" do
-  path "/etc/init/dynamodb-local.conf"
+  path "#{node[:dynamodb_local][:dir]}/dynamodb-local.conf"
   source "dynamodb-local.conf.erb"
   owner "root"
   group "root"
