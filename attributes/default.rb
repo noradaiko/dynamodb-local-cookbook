@@ -4,7 +4,7 @@ node.default[:dynamodb_local][:source_extension] = 'tar.gz'
 
 # === USER & PATHS
 node.default[:dynamodb_local][:dir] = '/usr/local/dynamodb-local'
-node.default[:dynamodb_local][:path][:data] = "/data/dynamodb-local"
+node.default[:dynamodb_local][:path][:data] = "/var/lib/dynamodb-local"
 node.default[:dynamodb_local][:path][:logs] = "./main"
 
 # === RUN DETAILS
