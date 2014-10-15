@@ -3,8 +3,8 @@ node.default[:dynamodb_local][:source] = "http://dynamodb-local.s3-website-us-we
 node.default[:dynamodb_local][:source_extension] = 'tar.gz'
 
 # === USER & PATHS
-node.default[:dynamodb_local][:dir] = '/usr/local/dynamodb-local'
-node.default[:dynamodb_local][:path][:data] = "/var/lib/dynamodb-local"
+node.default[:dynamodb_local][:dir] = '/usr/local/dynamodb'
+node.default[:dynamodb_local][:path][:data] = "/var/lib/dynamodb"
 node.default[:dynamodb_local][:path][:logs] = "./main"
 
 # === RUN DETAILS
