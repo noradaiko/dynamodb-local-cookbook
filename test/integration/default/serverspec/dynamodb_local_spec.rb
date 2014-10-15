@@ -1,7 +1,9 @@
-require 'serverspec'
+# -*- coding:utf-8 -*-
 
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
+require 'serverspec'
+require 'pathname'
+
+set :backend, :exec
 
 RSpec.configure do |c|
   c.before :all do
