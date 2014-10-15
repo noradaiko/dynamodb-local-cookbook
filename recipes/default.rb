@@ -12,6 +12,14 @@ ark 'dynamodb' do
   strip_components 0
 end
 
+# create app directory
+#
+directory node[:dynamodb_local][:dir] do
+  owner "root"
+  mode 0755
+  action :create
+end
+
 # create data directory
 #
 directory node[:dynamodb_local][:path][:data] do
