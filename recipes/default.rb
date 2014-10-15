@@ -39,7 +39,6 @@ end
 # create service
 #
 service "dynamodb-local" do
-  provider Chef::Provider::Service::Upstart
   supports :status => true, :stop => true, :start => true, :restart => true
 end
 
